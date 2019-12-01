@@ -19,7 +19,126 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-      </LinearLayout>
+        <TextView
+            android:id="@+id/editText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="8dp"
+            android:ems="10"
+            android:fontFamily="sans-serif-smallcaps"
+            android:inputType="textPersonName"
+            android:text="Income tax calculator for Ontario"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/sin_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:hint="SIN Number" />
+
+        <TextView
+            android:id="@+id/txtFullName"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:layout_marginTop="8dp"
+            android:hint="Full Name" />
+
+        <TextView
+            android:id="@+id/txtDate"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:layout_marginTop="8dp"
+            android:hint="Age" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:hint="Gender" />
+
+        <TextView
+            android:id="@+id/txtFillingDate"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:hint="TaxFillingDate"
+            android:inputType="date" />
+
+        <TextView
+            android:id="@+id/txtGrossIncome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="GrossIncome"
+            android:inputType="numberDecimal" />
+
+        <TextView
+            android:id="@+id/txtFederalTax"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:hint="FederalTax"
+            android:inputType="numberDecimal" />
+
+        <TextView
+            android:id="@+id/txtProvincialTax"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:hint="ProvincialTax"
+            android:inputType="numberDecimal" />
+
+        <TextView
+            android:id="@+id/txtCPP"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:hint="CPP"
+            android:inputType="numberDecimal" />
+
+        <TextView
+            android:id="@+id/txtEmpIns"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:hint="Employment Insurance"
+            android:inputType="numberDecimal" />
+
+
+        <TextView
+            android:id="@+id/txtRRSPContributed"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:hint="RRSP Contributed"
+            android:inputType="numberDecimal" />
+
+        <TextView
+            android:id="@+id/txtCarryForwardRRSP"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:hint="Carry forward RRSP"
+            android:inputType="numberDecimal" />
+
+        <TextView
+            android:id="@+id/txtTotalTaxableIncome"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:hint="Total Taxable Income"
+            android:inputType="numberDecimal" />
+
+
+        <TextView
+            android:id="@+id/txtTotalTaxPayed"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:hint="Total Tax Payed"
+            android:inputType="numberDecimal" />
+
+
+    </LinearLayout>
     </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
