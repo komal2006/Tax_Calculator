@@ -19,7 +19,91 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            
+            <TextView
+                android:id="@+id/edtTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="8dp"
+                android:ems="10"
+                android:fontFamily="monospace"
+                android:inputType="textPersonName"
+                android:text="Income tax calculator for Ontario"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/sin_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:inputType="number"
+                android:hint="Enter SIN Number" />
+
+            <EditText
+                android:id="@+id/edtFirstName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:hint="Enter First Name" />
+
+            <EditText
+                android:id="@+id/edtLastName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:hint="Enter Last Name" />
+
+            <TextView
+                android:id="@+id/txtDate"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:layout_marginTop="8dp"
+                android:text="Select Date of Birth" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:text="Gender" />
+
+
+
+            <TextView
+                android:id="@+id/txtAge"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:hint="Age"
+                android:inputType="number" />
+
+            <TextView
+                android:id="@+id/txtFillingDate"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:hint="TaxDate"
+                android:inputType="date" />
+
+
+            <EditText
+                android:id="@+id/txtRRSPContributed"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:hint="RRSP Contributed"
+                android:inputType="numberDecimal" />
+
+
+            <Button
+                android:id="@+id/btnCalculate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Calculate" />
+
         </LinearLayout>
     </ScrollView>
 
