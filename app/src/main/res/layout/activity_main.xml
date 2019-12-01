@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <ScrollView
-        android:layout_width="409dp"
+        android:layout_width="415dp"
         android:layout_height="600dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -27,10 +27,12 @@
                 android:layout_marginTop="24dp"
                 android:layout_marginEnd="8dp"
                 android:ems="10"
-                android:fontFamily="monospace"
+                android:fontFamily="sans-serif-smallcaps"
                 android:inputType="textPersonName"
                 android:text="Income tax calculator for Ontario"
                 android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -42,8 +44,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
-                android:inputType="number"
-                android:hint="Enter SIN Number" />
+                android:hint="Enter SIN Number"
+                android:inputType="number" />
 
             <EditText
                 android:id="@+id/edtFirstName"
@@ -74,7 +76,6 @@
                 android:text="Gender" />
 
 
-
             <TextView
                 android:id="@+id/txtAge"
                 android:layout_width="match_parent"
@@ -102,7 +103,9 @@
                 android:id="@+id/btnCalculate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Calculate" />
+                android:text="Calculate"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textStyle="bold" />
 
             <RadioGroup
                 android:id="@+id/rgGender"
