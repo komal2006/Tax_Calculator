@@ -1,4 +1,6 @@
 package com.example.taxcalculator;
 
-public class CRACustomer {
+public class CRACustomer
+{
+
 }
