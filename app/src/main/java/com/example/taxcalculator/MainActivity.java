@@ -17,6 +17,6 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
 
         btnCalculate = findViewById(R.id.btnCalculate);
-        
+
     }
 }
