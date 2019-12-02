@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity
         rbOthers = findViewById(R.id.rbOthers);
         edtFirstName = findViewById(R.id.edtFirstName);
         radioAction();
+        calculate();
 
 
     }
@@ -68,7 +69,7 @@ public class MainActivity extends AppCompatActivity
                     radio = rbFMale.getText().toString();
                     Toast.makeText(getApplicationContext(),"Female",Toast.LENGTH_SHORT).show();
                     rbFMale.setSelected(true);
-                    
+
                 }
                 else if(checkedId==R.id.rbOthers)
                 {
@@ -78,6 +79,27 @@ public class MainActivity extends AppCompatActivity
                     rbOthers.setSelected(true);
 
                 }
+            }
+        });
+    }
+
+    public void calculate()
+    {
+
+        btnCalculate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+
+            {
+
+
+                CRACustomer cra = new CRACustomer(sin_number.getText().toString(),txtAge.getText().toString(), edtFirstName.getText().toString(), edtLastName.getText().toString(),rgMain.toString());
+
+                Intent mIntent = new Intent(MainActivity.this, TaxCalculated.class);
+                mIntent.putExtra("CRACustomer",cra);
+                          // mIntent.putExtra("gender", radio);
+                startActivity(mIntent);
+
             }
         });
     }
