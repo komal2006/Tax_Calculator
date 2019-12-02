@@ -39,8 +39,62 @@ public class CRACustomer
     }
 
     public String getFullName() {
-        // eg: KAUR, Charan
+
         return lastName.toUpperCase() + ", " +
                 firstName.substring(0,1).toUpperCase() + firstName.substring(1);
     }
+
+    public String getGender(){
+        return  gender;
+    }
+
+    public Date getBirthDate() {
+        return birthDate;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public Date getFilingDate() {
+        return filingDate;
+    }
+
+    public double getGrossIncome() {
+        return grossIncome;
+    }
+
+    public double getEmpInsurance() {
+        return empInsurance;
+    }
+
+    public double getRrspContri() {
+        return rrspContri;
+    }
+
+    public double getRrspCarryForward() {
+        return rrspCarryForward;
+    }
+
+    public double getTaxableIncome() {
+        return taxableIncome;
+    }
+
+    public double getTaxPaid() {
+        return taxPaid;
+    }
+
+    public double getFederalTax() {
+        return federalTax;
+    }
+
+    public double getProvicialTax() {
+        return provicialTax;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
 }
