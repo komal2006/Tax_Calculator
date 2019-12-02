@@ -56,20 +56,55 @@ public class MainActivity extends AppCompatActivity
         txtBirthDate = findViewById(R.id.txtBirthDate);
         edtRRSPcontri = findViewById(R.id.edtRRSP);
 
-
-        // button to navigate to next activity
-        btnShow.setOnClickListener(new View.OnClickListener() {
+        final DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year, int monthOfYear,
+                                  int dayOfMonth) {
+                // TODO Auto-generated method stub
+                calendar.set(Calendar.YEAR, year);
+                calendar.set(Calendar.MONTH, monthOfYear);
+                calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+                //dateFormat();
+            }
+        };
+        txtBirthDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Double grossIncome = Double.parseDouble(edtGrossIncome.getText().toString());
-                Double rrsp = Double.parseDouble(edtRRSPcontri.getText().toString());
-                customer = new CRACustomer(edtSinNumber.getText().toString(),
-                        edtFirstName.getText().toString(),
-                        edtLastName.getText().toString(),
-                        selectedGender, grossIncome, rrsp);
-                Intent mIntent = new Intent(MainActivity.this, TaxCalculated.class);
-                mIntent.putExtra("CRACustomer", customer);
-                startActivity(mIntent);
+                // TODO Auto-generated method stub
+                new DatePickerDialog(MainActivity.this, date, calendar
+                        .get(Calendar.YEAR), calendar.get(Calendar.MONTH),
+                        calendar.get(Calendar.DAY_OF_MONTH)).show();
             }
         });
+        //radio button
+        rgGender.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if(checkedId == R.id.rdMale){
+                    selectedGender = rdMale.getText().toString();
+                }else if(checkedId == R.id.rdFemale){
+                    selectedGender = rdFemale.getText().toString();
+                }else {
+                    selectedGender = rdOther.getText().toString();
+                }
+            }
+
+        });
+
+
+        // button to navigate to next activity
+//        btnShow.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Double grossIncome = Double.parseDouble(edtGrossIncome.getText().toString());
+//                Double rrsp = Double.parseDouble(edtRRSPcontri.getText().toString());
+//                customer = new CRACustomer(edtSinNumber.getText().toString(),
+//                        edtFirstName.getText().toString(),
+//                        edtLastName.getText().toString(),
+//                        selectedGender, grossIncome, rrsp);
+//                Intent mIntent = new Intent(MainActivity.this, TaxCalculated.class);
+//                mIntent.putExtra("CRACustomer", customer);
+//                startActivity(mIntent);
+//            }
+//        });
     }
