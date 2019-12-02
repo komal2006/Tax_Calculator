@@ -2,6 +2,7 @@ package com.example.taxcalculator;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -16,7 +17,7 @@ public class MainActivity extends AppCompatActivity
     private EditText sin_number;
     private EditText edtFirstName;
     private EditText edtLastName;
-    private EditText mainAge;
+    private EditText txtAge;
     private RadioGroup rgMain;
     private RadioButton rbMale;
     private RadioButton rbFMale;
@@ -25,21 +26,23 @@ public class MainActivity extends AppCompatActivity
 
     private Button btnCalculate;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         btnCalculate = findViewById(R.id.btnCalculate);
-        btnCalculate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v)
-            {
-                Intent mIntent = new Intent(MainActivity.this, TaxCalculated.class);
-                startActivity(mIntent);
 
-            }
-        });
+        edtFirstName = findViewById(R.id.edtFirstName);
+        sin_number = findViewById(R.id.sin_number);
+        edtLastName = findViewById(R.id.edtLastName);
+        txtAge = findViewById(R.id.txtAge);
+        rgMain = findViewById(R.id.rgGender);
+        rbMale = findViewById(R.id.rbMale);
+        rbFMale = findViewById(R.id.rbFemale);
+        rbOthers = findViewById(R.id.rbOthers);
+
 
 
 
