@@ -3,7 +3,6 @@ package com.example.taxcalculator;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Build;
@@ -33,7 +32,7 @@ public class MainActivity extends AppCompatActivity
     private TextView txtFullName,txtGender, txtTaxFilingDate;
     private RadioGroup rgGender;
     private RadioButton radioGender,rdMale,rdFemale,rdOther;
-    private Button btnShow;
+    private Button btnCalculate;
     private String selectedGender = "";
 
 
@@ -52,7 +51,7 @@ public class MainActivity extends AppCompatActivity
         rdOther = findViewById(R.id.rdOthers);
         txtTaxFilingDate = findViewById(R.id.txt_D_taxFilingDate);
         edtGrossIncome = findViewById(R.id.edtGrossIncome);
-        btnShow = findViewById(R.id.btnShow);
+        btnCalculate = findViewById(R.id.btnCalculate);
         txtBirthDate = findViewById(R.id.txtBirthDate);
         edtRRSPcontri = findViewById(R.id.edtRRSP);
         //current date
@@ -93,7 +92,7 @@ public class MainActivity extends AppCompatActivity
 
         });
         // button to navigate to next activity
-        btnShow.setOnClickListener(new View.OnClickListener() {
+        btnCalculate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Double grossIncome = Double.parseDouble(edtGrossIncome.getText().toString());
