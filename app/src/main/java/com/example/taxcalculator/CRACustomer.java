@@ -25,4 +25,22 @@ public class CRACustomer
         this.grossIncome = grossIncome;
         this.rrspContri = rrspContri;
     }
+
+    public String getSinNumber() {
+        return sinNumber;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public String getFullName() {
+        // eg: KAUR, Charan
+        return lastName.toUpperCase() + ", " +
+                firstName.substring(0,1).toUpperCase() + firstName.substring(1);
+    }
 }
