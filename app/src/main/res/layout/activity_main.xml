@@ -48,7 +48,6 @@
                 android:layout_marginBottom="8dp"
                 android:hint="Enter SIN Number"
                 android:maxLength="9" />
-
             <EditText
                 android:id="@+id/edtFirstName"
                 android:layout_width="match_parent"
@@ -56,6 +55,8 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
                 android:hint="Enter First Name" />
+
+
 
             <EditText
                 android:id="@+id/edtLastName"
