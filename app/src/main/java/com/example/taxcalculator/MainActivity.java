@@ -25,16 +25,16 @@ public class MainActivity extends AppCompatActivity
 {
 
 
-        CRACustomer customer;
-        final Calendar calendar = Calendar.getInstance();
-        DatePickerDialog datePickerDialog;
-        private TextView txtTitle;
-        private EditText edtSinNumber, edtFirstName, edtLastName,txtBirthDate,edtGrossIncome, edtRRSPcontri;
-        private TextView txtFullName,txtGender, txtTaxFilingDate;
-        private RadioGroup rgGender;
-        private RadioButton radioGender,rdMale,rdFemale,rdOther;
-        private Button btnShow;
-        private String selectedGender = "";
+    CRACustomer customer;
+    final Calendar calendar = Calendar.getInstance();
+    DatePickerDialog datePickerDialog;
+    private TextView txtTitle;
+    private EditText edtSinNumber, edtFirstName, edtLastName,txtBirthDate,edtGrossIncome, edtRRSPcontri;
+    private TextView txtFullName,txtGender, txtTaxFilingDate;
+    private RadioGroup rgGender;
+    private RadioButton radioGender,rdMale,rdFemale,rdOther;
+    private Button btnShow;
+    private String selectedGender = "";
 
 
     @RequiresApi(api = Build.VERSION_CODES.N)
@@ -55,7 +55,9 @@ public class MainActivity extends AppCompatActivity
         btnShow = findViewById(R.id.btnShow);
         txtBirthDate = findViewById(R.id.txtBirthDate);
         edtRRSPcontri = findViewById(R.id.edtRRSP);
-
+        //current date
+//        currentDate();
+        //date picker
         final DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int monthOfYear,
@@ -90,8 +92,6 @@ public class MainActivity extends AppCompatActivity
             }
 
         });
-
-
         // button to navigate to next activity
         btnShow.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -108,36 +108,36 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
-        private void dateFormat() {
-            String myFormat = "dd-MMM-yyyy"; //In which you need put here
-            java.text.SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
-            txtBirthDate.setText(sdf.format(calendar.getTime()));
-        }
+    };
+    private void dateFormat() {
+        String myFormat = "dd-MMM-yyyy"; //In which you need put here
+        java.text.SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
+        txtBirthDate.setText(sdf.format(calendar.getTime()));
+    }
+    private  void currentDate(){
+        // for tax filing date
 
-        private  void currentDate(){
-            // for tax filing date
+        String todayDateFormat = "EEE, MMM d, yyyy";
+        java.text.SimpleDateFormat td = new SimpleDateFormat(todayDateFormat, Locale.CANADA);
+        txtTaxFilingDate.setText(td.format(calendar.getTime()));
 
-            String todayDateFormat = "EEE, MMM d, yyyy";
-            java.text.SimpleDateFormat td = new SimpleDateFormat(todayDateFormat, Locale.CANADA);
-            txtTaxFilingDate.setText(td.format(calendar.getTime()));
-
-        }
-        public  void checkedButton(View view){
-            int radioId = rgGender.getCheckedRadioButtonId();
-            rgGender.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-                @Override
-                public void onCheckedChanged(RadioGroup group, int checkedId) {
-                    if(checkedId == R.id.rdMale){
-                        selectedGender = rdMale.getText().toString();
-                    }else if(checkedId == R.id.rdFemale){
-                        selectedGender = rdFemale.getText().toString();
-                    }else {
-                        selectedGender = rdOther.getText().toString();
-                    }
+    }
+    public  void checkedButton(View view){
+        int radioId = rgGender.getCheckedRadioButtonId();
+        rgGender.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if(checkedId == R.id.rdMale){
+                    selectedGender = rdMale.getText().toString();
+                }else if(checkedId == R.id.rdFemale){
+                    selectedGender = rdFemale.getText().toString();
+                }else {
+                    selectedGender = rdOther.getText().toString();
                 }
-            });
-            radioGender = findViewById(radioId);
-            txtGender.setText(selectedGender);
-            Toast.makeText(this, "Gender:" + radioGender.getText(), Toast.LENGTH_SHORT).show();
-        }
+            }
+        });
+        radioGender = findViewById(radioId);
+        txtGender.setText(selectedGender);
+        Toast.makeText(this, "Gender:" + radioGender.getText(), Toast.LENGTH_SHORT).show();
+    }
     }
