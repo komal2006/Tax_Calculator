@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity
                 calendar.set(Calendar.YEAR, year);
                 calendar.set(Calendar.MONTH, monthOfYear);
                 calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-                //dateFormat();
+                dateFormat();
             }
         };
         txtBirthDate.setOnClickListener(new View.OnClickListener() {
@@ -93,7 +93,7 @@ public class MainActivity extends AppCompatActivity
 
 
         // button to navigate to next activity
-//        btnShow.setOnClickListener(new View.OnClickListener() {
+        btnShow.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
 //                Double grossIncome = Double.parseDouble(edtGrossIncome.getText().toString());
@@ -107,4 +107,10 @@ public class MainActivity extends AppCompatActivity
 //                startActivity(mIntent);
 //            }
 //        });
+
+        private void dateFormat() {
+            String myFormat = "dd-MMM-yyyy"; //In which you need put here
+            java.text.SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
+            txtBirthDate.setText(sdf.format(calendar.getTime()));
+        }
     }
