@@ -40,7 +40,7 @@ public class TaxCalculated extends AppCompatActivity {
         Intent mIntent = getIntent();
         CRACustomer customer = mIntent.getParcelableExtra("CRACustomer");
 
-        txtDsin.setText(" SIN: \t" + customer.getSinNumber());
+        txtDsin.setText(" SIN NUMBER: \t" + customer.getSinNumber());
         txtDfullName.setText(" FULL NAME: \t" + customer.getFullName());
         txtDgender.setText(" GENDER: \t" + customer.getGender());
         txtDgrossIncome.setText(" GROSS INCOME: \t" + customer.getGrossIncome());
