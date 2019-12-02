@@ -46,9 +46,9 @@ public class MainActivity extends AppCompatActivity
         edtLastName = findViewById(R.id.edtLastName);
         txtGender = findViewById(R.id.txtGender);
         rgGender = findViewById(R.id.rgGender);
-        rdMale = findViewById(R.id.rdMale);
-        rdFemale = findViewById(R.id.rdFemale);
-        rdOther = findViewById(R.id.rdOthers);
+        rdMale = findViewById(R.id.rbMale);
+        rdFemale = findViewById(R.id.rbFemale);
+        rdOther = findViewById(R.id.rbOthers);
         txtTaxFilingDate = findViewById(R.id.txt_D_taxFilingDate);
         edtGrossIncome = findViewById(R.id.edtGrossIncome);
         btnCalculate = findViewById(R.id.btnCalculate);
@@ -81,9 +81,9 @@ public class MainActivity extends AppCompatActivity
         rgGender.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if(checkedId == R.id.rdMale){
+                if(checkedId == R.id.rbMale){
                     selectedGender = rdMale.getText().toString();
-                }else if(checkedId == R.id.rdFemale){
+                }else if(checkedId == R.id.rbFemale){
                     selectedGender = rdFemale.getText().toString();
                 }else {
                     selectedGender = rdOther.getText().toString();
@@ -126,13 +126,15 @@ public class MainActivity extends AppCompatActivity
         rgGender.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if(checkedId == R.id.rdMale){
+                if(checkedId == R.id.rbMale){
                     selectedGender = rdMale.getText().toString();
-                }else if(checkedId == R.id.rdFemale){
+                }else if(checkedId == R.id.rbFemale)
+                {
                     selectedGender = rdFemale.getText().toString();
-                }else {
+                }else
+                    {
                     selectedGender = rdOther.getText().toString();
-                }
+                    }
             }
         });
         radioGender = findViewById(radioId);

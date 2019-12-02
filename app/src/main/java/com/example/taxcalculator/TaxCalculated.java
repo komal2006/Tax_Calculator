@@ -46,6 +46,9 @@ public class TaxCalculated extends AppCompatActivity {
         txtDgrossIncome.setText(" GROSS INCOME: \t" + customer.getGrossIncome());
         lblRRSPcontri.setText("RRSP Contributed: \t" + customer.getRrspContri());
 
+
+
+
         // calculate  cpp
         double grossIncome = customer.getGrossIncome();
         if(grossIncome > 57400.00){
