@@ -22,7 +22,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/editText"
+                android:id="@+id/edtTitle"
                 android:layout_width="match_parent"
                 android:layout_height="32dp"
                 android:layout_marginStart="8dp"
@@ -46,7 +46,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
-                android:hint="Enter SIN Number" />
+                android:hint="Enter SIN Number"
+                android:maxLength="9" />
 
             <EditText
                 android:id="@+id/edtFirstName"
@@ -69,11 +70,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Select Date of Birth"
+                android:focusable="false"
                 android:inputType="date"
-                android:focusable="false"/>
+                android:text="Select Date of Birth" />
 
-            <TextView android:id="@+id/txtGender"
+            <TextView
+                android:id="@+id/txtGender"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -88,23 +90,23 @@
                     android:id="@+id/rdMale"
                     android:layout_width="match_parent"
                     android:layout_height="32dp"
-                    android:text="Male"
                     android:checked="true"
-                    android:onClick="checkedButton" />
+                    android:onClick="checkedButton"
+                    android:text="Male" />
 
                 <RadioButton
                     android:id="@+id/rdFemale"
                     android:layout_width="match_parent"
                     android:layout_height="32dp"
-                    android:text="Female"
-                    android:onClick="checkedButton" />
+                    android:onClick="checkedButton"
+                    android:text="Female" />
 
                 <RadioButton
                     android:id="@+id/rdOthers"
                     android:layout_width="match_parent"
                     android:layout_height="32dp"
-                    android:text="Others"
-                    android:onClick="checkedButton" />
+                    android:onClick="checkedButton"
+                    android:text="Others" />
             </RadioGroup>
 
             <TextView
@@ -128,8 +130,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:inputType="numberDecimal"
-                android:hint="Enter Gross income" />
+                android:hint="Enter Gross income"
+                android:inputType="numberDecimal" />
 
 
             <EditText
