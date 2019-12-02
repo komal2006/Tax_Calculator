@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
 {
@@ -34,7 +35,7 @@ public class MainActivity extends AppCompatActivity
 
         btnCalculate = findViewById(R.id.btnCalculate);
 
-        edtFirstName = findViewById(R.id.edtFirstName);
+
         sin_number = findViewById(R.id.sin_number);
         edtLastName = findViewById(R.id.edtLastName);
         txtAge = findViewById(R.id.txtAge);
@@ -42,9 +43,42 @@ public class MainActivity extends AppCompatActivity
         rbMale = findViewById(R.id.rbMale);
         rbFMale = findViewById(R.id.rbFemale);
         rbOthers = findViewById(R.id.rbOthers);
+        edtFirstName = findViewById(R.id.edtFirstName);
+        radioAction();
 
 
+    }
 
+    public void radioAction()
+    {
+        rgMain.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId)
+            {
 
+                if(checkedId==R.id.rbMale)
+                {
+                    radio = rbMale.getText().toString();
+                    Toast.makeText(getApplicationContext(),"Male",Toast.LENGTH_SHORT).show();
+                    rbMale.setSelected(true);
+                }
+                else if(checkedId==R.id.rbFemale)
+                {
+
+                    radio = rbFMale.getText().toString();
+                    Toast.makeText(getApplicationContext(),"Female",Toast.LENGTH_SHORT).show();
+                    rbFMale.setSelected(true);
+                    
+                }
+                else if(checkedId==R.id.rbOthers)
+                {
+
+                    radio = rbOthers.getText().toString();
+                    Toast.makeText(getApplicationContext(),"Others",Toast.LENGTH_SHORT).show();
+                    rbOthers.setSelected(true);
+
+                }
+            }
+        });
     }
 }
