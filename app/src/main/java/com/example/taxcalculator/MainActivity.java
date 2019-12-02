@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity
         btnCalculate = findViewById(R.id.btnCalculate);
         txtBirthDate = findViewById(R.id.txtBirthDate);
         edtRRSPcontri = findViewById(R.id.edtRRSP);
-        
+
         final DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int monthOfYear,
@@ -107,7 +107,7 @@ public class MainActivity extends AppCompatActivity
 
     };
     private void dateFormat() {
-        String myFormat = "dd-MMM-yyyy"; //In which you need put here
+        String myFormat = "dd-MMM-yyyy"; 
         java.text.SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
         txtBirthDate.setText(sdf.format(calendar.getTime()));
     }
