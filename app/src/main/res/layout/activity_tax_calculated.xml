@@ -95,13 +95,7 @@
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="16dp"
                 android:hint="carry forward RRSP" />
-            <TextView android:id="@+id/txt_D_taxableIncome"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="32dp"
-                android:layout_marginEnd="16dp"
-                android:hint="Total Taxable Income" />
+
             <TextView android:id="@+id/txt_D_federalTax"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -109,6 +103,13 @@
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="16dp"
                 android:hint="Federal Tax" />
+            <TextView android:id="@+id/txt_D_taxableIncome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="16dp"
+                android:hint="Total Taxable Income" />
             <TextView android:id="@+id/txt_D_provincialTax"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
