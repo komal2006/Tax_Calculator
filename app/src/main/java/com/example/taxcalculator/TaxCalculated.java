@@ -184,7 +184,8 @@ public class TaxCalculated extends AppCompatActivity {
         return provincialTax;
     }
     public  double calTaxPaid(){
-        return totalTaxPaid;
+
+        return totalTaxPaid = federalTax + provincialTax;
     }
 
 }
