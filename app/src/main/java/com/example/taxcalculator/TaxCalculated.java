@@ -148,6 +148,32 @@ public class TaxCalculated extends AppCompatActivity {
     }
     public  double calcProvincialTax(){
         //calculate provincial tax
+        double temp = taxableIncome ;
+
+        if(temp <= 10582.00){
+            provincialTax = 0;
+            temp = taxableIncome - 10582.00;
+        }
+        if(temp >= 10582.01){
+            provincialTax = (temp * 0.0505);
+            temp = temp - 33323.99;
+        }
+        if(temp >= 43906.01){
+            provincialTax = (temp * 0.0915);
+            temp = temp - 43906.99;
+        }
+        if(temp >= 87813.01){
+            provincialTax = (temp * 0.1116);
+            temp = temp - 62187.99;
+        }
+        if (temp >= 150000.01){
+            provincialTax = (temp * 0.1216);
+            temp = temp - 69999.99;
+        }
+        if(temp >= 220000.01){
+            provincialTax = (temp * 0.1316);
+
+        }
         return provincialTax;
     }
     public  double calTaxPaid(){
