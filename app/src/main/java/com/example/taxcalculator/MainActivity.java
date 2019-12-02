@@ -107,7 +107,7 @@ public class MainActivity extends AppCompatActivity
 
     };
     private void dateFormat() {
-        String myFormat = "dd-MMM-yyyy"; 
+        String myFormat = "dd-MMM-yyyy";
         java.text.SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
         txtBirthDate.setText(sdf.format(calendar.getTime()));
     }
