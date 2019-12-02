@@ -111,7 +111,7 @@
                 android:id="@+id/txtFillingDate"
                 android:layout_width="match_parent"
                 android:layout_height="32dp"
-                android:hint="TaxDate"
+                android:hint="TaxFillingDate"
                 android:inputType="date" />
 
 
