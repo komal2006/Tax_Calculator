@@ -119,25 +119,31 @@ public class TaxCalculated extends AppCompatActivity {
     public double calcFedralTax(){
         //calculate federal tax
         double temp = taxableIncome ;
-        if(taxableIncome < 12069.00){
+        if(temp < 12069.00){
             federalTax = 0;
             temp = taxableIncome - 12069.00;
-        }else if(temp < 47630.00){
+        }
+        if(temp >= 12069.01){
             federalTax = (temp * 0.15);
-            temp = temp - federalTax;
-        }else if(temp < 95259.00){
-            federalTax = (temp * 0.205); //20.50%
-            temp = temp - federalTax;
-        }else if(temp < 147667.00){
-            federalTax = (temp * 0.26); //26%
-            temp = temp - federalTax;
-        }else if (temp < 210371.00){
-            federalTax = (temp * 0.29);//29%
-            temp = temp - federalTax;
-        }else{
-            federalTax = (temp * 0.33);//33%
+            temp = temp - 35561;
+        }
+        if(temp < 47630.00){
+            federalTax = (temp * 0.205);
             temp = temp - federalTax;
         }
+         if(temp < 95259.00){
+            federalTax = (temp * 0.26);
+            temp = temp - federalTax;
+        }
+         if(temp < 147667.00){
+            federalTax = (temp * 0.29);
+            temp = temp - federalTax;
+        }
+         if (temp < 210371.00){
+            federalTax = (temp * 0.33);
+           // temp = temp - federalTax;
+        }
+
         return federalTax;
     }
     public  double calcProvincialTax(){
