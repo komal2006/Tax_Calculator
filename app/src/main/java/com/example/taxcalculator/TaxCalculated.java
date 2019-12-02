@@ -86,8 +86,30 @@ public class TaxCalculated extends AppCompatActivity {
         lblTaxPaid.setText("Total tax Paid:\t" + taxpaid);
 
 
+    }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case android.R.id.home:
+                finish();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        return true;
+    }
+    public double calcCpp(){
+        // calculate  cpp
+        if(customer.getGrossIncome() > 57400.00){
+            cpp = (57400.00 * 0.051);
+        } else {
+            cpp = (customer.getGrossIncome() * 0.051);
+        }
+        return cpp;
     }
 
 }
