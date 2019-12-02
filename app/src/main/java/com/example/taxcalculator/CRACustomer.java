@@ -3,6 +3,9 @@ package com.example.taxcalculator;
 
 
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.util.Date;
 
 public class CRACustomer
@@ -96,5 +99,40 @@ public class CRACustomer
     public int describeContents() {
         return 0;
     }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(sinNumber);
+        dest.writeString(firstName);
+        dest.writeString(lastName);
+        dest.writeString(fullName);
+        dest.writeString(gender);
+        dest.writeDouble(grossIncome);
+        dest.writeDouble(rrspContri);
+//        dest.writeDouble(taxableIncome);
+//        dest.writeDouble(federalTax);
+
+    }
+    public CRACustomer(Parcel parcel){
+        sinNumber = parcel.readString();
+        firstName = parcel.readString();
+        lastName = parcel.readString();
+        fullName = parcel.readString();
+        gender = parcel.readString();
+        grossIncome = parcel.readDouble();
+        rrspContri = parcel.readDouble();
+
+    }
+    public  static final Parcelable.Creator<CRACustomer> CREATOR = new Parcelable.Creator<CRACustomer>() {
+        @Override
+        public CRACustomer createFromParcel(Parcel parcel) {
+            return new CRACustomer(parcel);
+        }
+
+        @Override
+        public CRACustomer[] newArray(int size) {
+            return new CRACustomer[size];
+        }
+    };
 
 }
