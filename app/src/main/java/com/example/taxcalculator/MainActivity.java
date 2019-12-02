@@ -37,5 +37,39 @@ public class MainActivity extends AppCompatActivity
         private String selectedGender = "";
 
 
-       
+    @RequiresApi(api = Build.VERSION_CODES.N)
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        edtSinNumber = findViewById(R.id.edtSin_number);
+        edtFirstName = findViewById(R.id.edtFirstName);
+        edtLastName = findViewById(R.id.edtLastName);
+        txtGender = findViewById(R.id.txtGender);
+        rgGender = findViewById(R.id.rgGender);
+        rdMale = findViewById(R.id.rdMale);
+        rdFemale = findViewById(R.id.rdFemale);
+        rdOther = findViewById(R.id.rdOthers);
+        txtTaxFilingDate = findViewById(R.id.txt_D_taxFilingDate);
+        edtGrossIncome = findViewById(R.id.edtGrossIncome);
+        btnShow = findViewById(R.id.btnShow);
+        txtBirthDate = findViewById(R.id.txtBirthDate);
+        edtRRSPcontri = findViewById(R.id.edtRRSP);
+
+
+        // button to navigate to next activity
+        btnShow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Double grossIncome = Double.parseDouble(edtGrossIncome.getText().toString());
+                Double rrsp = Double.parseDouble(edtRRSPcontri.getText().toString());
+                customer = new CRACustomer(edtSinNumber.getText().toString(),
+                        edtFirstName.getText().toString(),
+                        edtLastName.getText().toString(),
+                        selectedGender, grossIncome, rrsp);
+                Intent mIntent = new Intent(MainActivity.this, TaxCalculated.class);
+                mIntent.putExtra("CRACustomer", customer);
+                startActivity(mIntent);
+            }
+        });
     }
