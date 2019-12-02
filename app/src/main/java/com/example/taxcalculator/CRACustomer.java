@@ -59,9 +59,14 @@ public class CRACustomer implements Parcelable
         return age;
     }
 
-    public Date getFilingDate() {
-        return filingDate;
-    }
+//    public void setAge(Integer Age)
+//    {
+//        this.age = age;
+//    }
+
+//    public Date getFilingDate() {
+//        return filingDate;
+//    }
 
     public double getGrossIncome() {
         return grossIncome;
@@ -110,6 +115,7 @@ public class CRACustomer implements Parcelable
         dest.writeString(gender);
         dest.writeDouble(grossIncome);
         dest.writeDouble(rrspContri);
+        //dest.writeDouble(age);
 //        dest.writeDouble(taxableIncome);
 //        dest.writeDouble(federalTax);
 

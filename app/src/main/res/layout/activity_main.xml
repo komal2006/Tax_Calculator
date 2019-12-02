@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#D6FCF3"
     tools:context=".MainActivity">
 
     <ScrollView
@@ -76,6 +77,14 @@
                 android:text="Select Date of Birth" />
 
             <TextView
+                android:id="@+id/txtAge"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:layout_marginTop="8dp"
+                android:inputType="number"
+                android:text="AGE" />
+
+            <TextView
                 android:id="@+id/txtGender"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -110,15 +119,6 @@
                     android:text="Others" />
             </RadioGroup>
 
-            <TextView
-                android:id="@+id/txtAge"
-                android:layout_width="match_parent"
-                android:layout_height="32dp"
-                android:layout_marginTop="8dp"
-                android:inputType="number"
-                android:text="AGE" />
-
-
 
             <EditText
                 android:id="@+id/edtGrossIncome"
@@ -141,8 +141,8 @@
                 android:id="@+id/btnCalculate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
                 android:layout_marginLeft="140dp"
+                android:layout_marginTop="20dp"
                 android:text="CALCULATE" />
 
 

@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity
         rdMale = findViewById(R.id.rbMale);
         rdFemale = findViewById(R.id.rbFemale);
         rdOther = findViewById(R.id.rbOthers);
-        txtTaxFilingDate = findViewById(R.id.txt_D_taxFilingDate);
+       // txtTaxFilingDate = findViewById(R.id.txt_D_taxFilingDate);
         edtGrossIncome = findViewById(R.id.edtGrossIncome);
         btnCalculate = findViewById(R.id.btnCalculate);
         txtBirthDate = findViewById(R.id.txtBirthDate);
@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity
                 calendar.set(Calendar.YEAR, year);
                 calendar.set(Calendar.MONTH, monthOfYear);
                 calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-                dateFormat();
+                 dateFormat();
             }
         };
         txtBirthDate.setOnClickListener(new View.OnClickListener() {
@@ -114,7 +114,7 @@ public class MainActivity extends AppCompatActivity
 
     };
     @RequiresApi(api = Build.VERSION_CODES.O)
-    private String dateFormat() {
+     private String dateFormat() {
         String myFormat = "dd-MMM-yyyy";
         SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
         txtBirthDate.setText(sdf.format(calendar.getTime()));
