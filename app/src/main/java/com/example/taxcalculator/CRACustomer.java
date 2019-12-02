@@ -1,6 +1,7 @@
 package com.example.taxcalculator;
 
 
+import android.os.Parcel;
 import android.os.Parcelable;
 
 public class CRACustomer implements Parcelable
@@ -28,4 +29,81 @@ public class CRACustomer implements Parcelable
         this.gender = gender;
     }
 
+    public static final Creator<CRACustomer> CREATOR = new Creator<CRACustomer>()
+    {
+        @Override
+        public CRACustomer createFromParcel(Parcel in) {
+            return new CRACustomer(in);
+        }
+
+        @Override
+        public CRACustomer[] newArray(int size) {
+            return new CRACustomer[size];
+        }
+    };
+    public String getLname() {
+        return lName;
+    }
+
+    public void setLname(String lname) {
+        this.lName = lname;
+    }
+
+    public String getSinNumber() {
+        return sinNumber;
+    }
+
+    public void setSinNumber(String sinNumber) {
+        this.sinNumber = sinNumber;
+    }
+
+    public String getAge() {
+        return age;
+    }
+
+    public void setAge(String age) {
+        this.age = age;
+    }
+
+    public String getFullName() {
+        return lName.toUpperCase() + " , " + fName;
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
+
+    public String getfName() {
+        return fName;
+    }
+
+    public void setfName(String fName) {
+        this.fName = fName;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags)
+    {
+        dest.writeString(sinNumber);
+        dest.writeString(fName);
+        dest.writeString(lName);
+        dest.writeString(fullName);
+        dest.writeString(age);
+        dest.writeString(gender);
+    }
+
+    public CRACustomer(Parcel parcel)
+    {
+        sinNumber = parcel.readString();
+        fName = parcel.readString();
+        lName = parcel.readString();
+        fullName =parcel.readString();
+        age = parcel.readString();
+        gender = parcel.readString();
+    }
 }
