@@ -17,6 +17,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.Period;
 import java.util.Calendar;
 import java.util.Locale;
 
@@ -34,13 +36,17 @@ public class MainActivity extends AppCompatActivity
     private RadioButton radioGender,rdMale,rdFemale,rdOther;
     private Button btnCalculate;
     private String selectedGender = "";
-
+    private TextView txtAge;
+    int dDay;
+    int dMonth;
+    int dYear;
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         edtSinNumber = findViewById(R.id.edtSin_number);
         edtFirstName = findViewById(R.id.edtFirstName);
         edtLastName = findViewById(R.id.edtLastName);
@@ -54,6 +60,7 @@ public class MainActivity extends AppCompatActivity
         btnCalculate = findViewById(R.id.btnCalculate);
         txtBirthDate = findViewById(R.id.txtBirthDate);
         edtRRSPcontri = findViewById(R.id.edtRRSP);
+        txtAge=findViewById(R.id.txtAge);
 
         final DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
             @Override
@@ -106,10 +113,25 @@ public class MainActivity extends AppCompatActivity
         });
 
     };
-    private void dateFormat() {
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    private String dateFormat() {
         String myFormat = "dd-MMM-yyyy";
-        java.text.SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
+        SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
         txtBirthDate.setText(sdf.format(calendar.getTime()));
+
+        LocalDate l = LocalDate.of(calendar.get(Calendar.YEAR),calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH));
+        LocalDate now = LocalDate.now(); //gets localDate
+        Period diff = Period.between(l, now); //difference between the dates is calculated
+        System.out.println(diff.getYears() + "years" + diff.getMonths() + "months" + diff.getDays() + "days");
+
+        String n1=String.valueOf(diff.getYears());
+        String n2=String.valueOf(diff.getMonths());
+        String n3=String.valueOf(diff.getDays());
+        String age="Age: "+n1+"Years"+n2+"Months"+n3+"Days";
+
+
+        txtAge.setText(age);
+        return  n1;
     }
     private  void currentDate(){
         // for tax filing date
