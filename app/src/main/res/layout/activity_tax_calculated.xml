@@ -60,13 +60,7 @@
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="16dp"
                 android:hint="Gross Income" />
-            <TextView android:id="@+id/txt_D_taxFilingDate"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="32dp"
-                android:layout_marginEnd="16dp"
-                android:hint="TAX Filing Date" />
+
             <TextView android:id="@+id/txt_D_empInsurance"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

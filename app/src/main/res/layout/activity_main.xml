@@ -118,13 +118,7 @@
                 android:inputType="number"
                 android:text="AGE" />
 
-            <TextView
-                android:id="@+id/txtDate"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:inputType="date"
-                android:text="Tax Filling Date" />
+
 
             <EditText
                 android:id="@+id/edtGrossIncome"
