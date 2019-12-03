@@ -28,6 +28,8 @@
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="16dp"
                 android:hint="SIN"
+                android:textSize="18sp"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -40,6 +42,8 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
                 android:hint="Full name"
+                android:textSize="18sp"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txt_D_SIN" />
@@ -51,7 +55,9 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="16dp"
-                android:hint="Age" />
+                android:hint="Age"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/txt_D_Gender"
@@ -60,7 +66,9 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="16dp"
-                android:hint="Gender" />
+                android:hint="Gender"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/txt_D_grossIncome"
@@ -69,7 +77,9 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="16dp"
-                android:hint="Gross Income" />
+                android:hint="Gross Income"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/txt_D_empInsurance"
@@ -78,7 +88,9 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="16dp"
-                android:hint="Employement Insurance" />
+                android:hint="Employement Insurance"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/txt_D_Cpp"
@@ -87,7 +99,9 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="16dp"
-                android:hint="CPP contribution in Year" />
+                android:hint="CPP contribution in Year"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/txt_D_RRSPContri"
@@ -96,7 +110,9 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="16dp"
-                android:hint="RRSP contributed" />
+                android:hint="RRSP contributed"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/txt_D_cfRRSP"
@@ -105,7 +121,9 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="16dp"
-                android:hint="carry forward RRSP" />
+                android:hint="carry forward RRSP"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/txt_D_federalTax"
@@ -114,7 +132,9 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="16dp"
-                android:hint="Federal Tax" />
+                android:hint="Federal Tax"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/txt_D_taxableIncome"
@@ -123,7 +143,9 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="16dp"
-                android:hint="Total Taxable Income" />
+                android:hint="Total Taxable Income"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/txt_D_provincialTax"
@@ -132,7 +154,9 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="16dp"
-                android:hint="Provincial Tax" />
+                android:hint="Provincial Tax"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/txt_D_taxPayed"
@@ -141,7 +165,9 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="16dp"
-                android:hint="Total Tax Payed" />
+                android:hint="Total Tax Payed"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
 
         </LinearLayout>

@@ -105,6 +105,7 @@ public class MainActivity extends AppCompatActivity
                 customer = new CRACustomer(edtSinNumber.getText().toString(),
                         edtFirstName.getText().toString(),
                         edtLastName.getText().toString(),
+                        txtAge.getText().toString(),
                         selectedGender, grossIncome, rrsp);
                 Intent mIntent = new Intent(MainActivity.this, TaxCalculated.class);
                 mIntent.putExtra("CRACustomer", customer);

@@ -8,6 +8,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import java.text.NumberFormat;
+
 public class TaxCalculated extends AppCompatActivity {
 
     CRACustomer customer;
@@ -18,12 +20,14 @@ public class TaxCalculated extends AppCompatActivity {
     double cpp = 0, ei = 0;  double rrsp = 0, rrspCf = 0, taxableIncome, federalTax,
             provincialTax, totalTaxPaid;
 
+     TextView lblAge;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tax_calculated);
         txtDsin = findViewById(R.id.txt_D_SIN);
         txtDfullName = findViewById(R.id.txt_D_fullName);
+        lblAge = findViewById(R.id.txt_D_age);
         txtDgender =   findViewById(R.id.txt_D_Gender);
         txtDgrossIncome = findViewById(R.id.txt_D_grossIncome);
         lblRRSPcontri = findViewById(R.id.txt_D_RRSPContri);
@@ -37,18 +41,25 @@ public class TaxCalculated extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-
+        NumberFormat formatter = NumberFormat.getCurrencyInstance();
         //collecting intent
         Intent mIntent = getIntent();
         CRACustomer customer = mIntent.getParcelableExtra("CRACustomer");
 
 
+
+
+        double pGrossIncome = customer.getGrossIncome();
+        double pRrspContri = customer.getRrspContri();
+        txtDgrossIncome.setText(" GROSS INCOME: \t" + formatter.format(pGrossIncome));
+        lblRRSPcontri.setText("RRSP Contributed: \t" + formatter.format(pRrspContri));
+
         txtDsin.setText(" SIN NUMBER: \t" + customer.getSinNumber());
         txtDfullName.setText(" FULL NAME: \t" + customer.getFullName());
         txtDgender.setText(" GENDER: \t" + customer.getGender());
-        txtDgrossIncome.setText(" GROSS INCOME: \t" + customer.getGrossIncome());
-        lblRRSPcontri.setText("RRSP Contributed: \t" + customer.getRrspContri());
-
+        //txtDgrossIncome.setText(" GROSS INCOME: \t" + customer.getGrossIncome());
+       // lblRRSPcontri.setText("RRSP Contributed: \t" + customer.getRrspContri());
+        lblAge.setText("AGE:  \t" + customer.getAge());
 
 
 
@@ -59,14 +70,20 @@ public class TaxCalculated extends AppCompatActivity {
         } else {
             cpp = (grossIncome * 0.051);
         }
-        lblcpp.setText("CPP COntribution in Year:\t" + cpp);
+        lblcpp.setText("CPP COntribution in Year:\t" + formatter.format(cpp));
+        //lblcpp.setText("CPP COntribution in Year:\t" + cpp);
+
+
         // calculate employement insurance
         if(grossIncome > 53100){
             ei = (53100 * 0.0162); //1.62%
         }else{
             ei = (grossIncome * (1.62/100));
         }
-        lblEmpInsurance.setText("Employeement Insurance: \t" + ei);
+        lblEmpInsurance.setText("Employeement Insurance: \t" + formatter.format(ei));
+        //lblEmpInsurance.setText("Employeement Insurance: \t" + ei);
+
+
         // calculate RRSP
         rrsp = customer.getRrspContri();
         double maxRRSP = (grossIncome * 0.18); //18%
@@ -76,25 +93,31 @@ public class TaxCalculated extends AppCompatActivity {
         }else{
             rrsp = rrsp;
         }
-        lblCfRRSP.setText("RRSP Carry forward: \t"+ rrspCf);
+
+        lblCfRRSP.setText("RRSP Carry forward: \t"+ formatter.format(rrspCf));
+       // lblCfRRSP.setText("RRSP Carry forward: \t"+ rrspCf);
 
 
 
         //federal tax
         double calFederal = calcFedralTax();
-        txtDfederalTax.setText("Federal Tax: \t" + calFederal);
+       txtDfederalTax.setText("Federal Tax: \t" + formatter.format(calFederal));
+       // txtDfederalTax.setText("Federal Tax: \t" + calFederal);
 
         //taxable income
         taxableIncome = grossIncome - (cpp + ei + rrsp);
-        lblTaxableIncome.setText("Taxable income:\t" + (double) taxableIncome);
+        lblTaxableIncome.setText("Taxable income:\t" + formatter.format(taxableIncome));
+        //lblTaxableIncome.setText("Taxable income:\t" + (double) taxableIncome);
 
         // Provincial Tax
         double calProvincial = calcProvincialTax();
-        txtDprovincialTax.setText("Provincial Tax:\t" + calProvincial);
+        txtDprovincialTax.setText("Provincial Tax:\t" +  formatter.format(calProvincial));
+       // txtDprovincialTax.setText("Provincial Tax:\t" + calProvincial);
 
         // total tax paid
         double taxpaid = calTaxPaid();
-        lblTaxPaid.setText("Total tax Paid:\t" + taxpaid);
+        lblTaxPaid.setText("Total tax Paid:\t" +  formatter.format(taxpaid));
+       // lblTaxPaid.setText("Total tax Paid:\t" + taxpaid);
 
 
     }

@@ -12,13 +12,13 @@ public class CRACustomer implements Parcelable
 {
     String sinNumber, firstName, lastName, fullName, gender;
     Date birthDate,filingDate;
-    int age;
+    String age;
     double grossIncome, federalTax, provicialTax, empInsurance;
     double rrspContri, rrspCarryForward, taxableIncome, taxPaid;
 
 
     public CRACustomer(String sinNumber, String firstName,
-                       String lastName, String gender, double grossIncome, double rrspContri)
+                       String lastName,String age, String gender, double grossIncome, double rrspContri)
     {
         this.sinNumber = sinNumber;
         this.firstName = firstName;
@@ -55,14 +55,14 @@ public class CRACustomer implements Parcelable
         return birthDate;
     }
 
-    public int getAge() {
+    public String getAge() {
         return age;
     }
 
-//    public void setAge(Integer Age)
-//    {
-//        this.age = age;
-//    }
+    public void setAge(String Age)
+    {
+        this.age = age;
+    }
 
 //    public Date getFilingDate() {
 //        return filingDate;
@@ -115,7 +115,7 @@ public class CRACustomer implements Parcelable
         dest.writeString(gender);
         dest.writeDouble(grossIncome);
         dest.writeDouble(rrspContri);
-        //dest.writeDouble(age);
+        dest.writeString(age);
 //        dest.writeDouble(taxableIncome);
 //        dest.writeDouble(federalTax);
 
@@ -128,6 +128,7 @@ public class CRACustomer implements Parcelable
         gender = parcel.readString();
         grossIncome = parcel.readDouble();
         rrspContri = parcel.readDouble();
+        age = parcel.readString();
 
     }
     public  static final Parcelable.Creator<CRACustomer> CREATOR = new Parcelable.Creator<CRACustomer>() {
